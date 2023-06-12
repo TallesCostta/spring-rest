@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.donatti.exceptions.UnsupportedMathOperationException;
+import br.com.donatti.exceptions.ResourcesNotFoundException;
 
 @RestController
 public class MathController implements Serializable{
@@ -31,7 +31,7 @@ public class MathController implements Serializable{
 			@PathVariable(value = "numberTwo") String numberTwo) throws Exception {
 
 		if (!isNumeric(numberOne) || !isNumeric(numberTwo)) {
-			throw new UnsupportedMathOperationException("Parametro invalido! por favor digite um valor numerico!");
+			throw new ResourcesNotFoundException("Parametro invalido! por favor digite um valor numerico!");
 		}
 		return convertToDouble(numberOne) + convertToDouble(numberTwo);
 	}
@@ -51,7 +51,7 @@ public class MathController implements Serializable{
 			@PathVariable(value = "numberTwo") String numberTwo) throws Exception {
 
 		if (!isNumeric(numberOne) || !isNumeric(numberTwo)) {
-			throw new UnsupportedMathOperationException("Parametro invalido! por favor digite um valor numerico!");
+			throw new ResourcesNotFoundException("Parametro invalido! por favor digite um valor numerico!");
 		}
 		return convertToDouble(numberOne) - convertToDouble(numberTwo);
 	}
@@ -71,7 +71,7 @@ public class MathController implements Serializable{
 			@PathVariable(value = "numberTwo") String numberTwo) throws Exception {
 
 		if (!isNumeric(numberOne) || !isNumeric(numberTwo)) {
-			throw new UnsupportedMathOperationException("Parametro invalido! por favor digite um valor numerico!");
+			throw new ResourcesNotFoundException("Parametro invalido! por favor digite um valor numerico!");
 		}
 		return convertToDouble(numberOne) * convertToDouble(numberTwo);
 	}
@@ -91,7 +91,7 @@ public class MathController implements Serializable{
 			@PathVariable(value = "numberTwo") String numberTwo) throws Exception {
 
 		if (!isNumeric(numberOne) || !isNumeric(numberTwo)) {
-			throw new UnsupportedMathOperationException("Parametro invalido! por favor digite um valor numerico!");
+			throw new ResourcesNotFoundException("Parametro invalido! por favor digite um valor numerico!");
 		}
 		return convertToDouble(numberOne) / convertToDouble(numberTwo);
 	
@@ -112,7 +112,7 @@ public class MathController implements Serializable{
 			@PathVariable(value = "numberTwo") String numberTwo) throws Exception {
 
 		if (!isNumeric(numberOne) || !isNumeric(numberTwo)) {
-			throw new UnsupportedMathOperationException("Parametro invalido! por favor digite um valor numerico!");
+			throw new ResourcesNotFoundException("Parametro invalido! por favor digite um valor numerico!");
 		}
 		return (convertToDouble(numberOne) + convertToDouble(numberTwo)) / 2;
 	
@@ -133,7 +133,7 @@ public class MathController implements Serializable{
 			@PathVariable(value = "numberTwo") String numberTwo) throws Exception {
 
 		if (!isNumeric(numberOne) || !isNumeric(numberTwo)) {
-			throw new UnsupportedMathOperationException("Parametro invalido! por favor digite um valor numerico!");
+			throw new ResourcesNotFoundException("Parametro invalido! por favor digite um valor numerico!");
 		}
 		
 		Integer numOne = converterToInt(numberOne);
